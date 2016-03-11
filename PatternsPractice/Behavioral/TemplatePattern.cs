@@ -8,14 +8,14 @@ namespace PatternsPractice.Behavioral
 {
     class TemplatePattern
     {
-        public static void Main(string[] args)
-        {
-            Template temp = new FeaturedAlgorithm();
-            temp.Execute();
-            temp = new BasicAlgorithm();
-            temp.Execute();
-            Console.ReadKey();
-        }
+        //public static void Main(string[] args)
+        //{
+        //    Template temp = new FeaturedAlgorithm();
+        //    temp.Execute();
+        //    temp = new BasicAlgorithm();
+        //    temp.Execute();
+        //    Console.ReadKey();
+        //}
     }
 
     abstract class Template

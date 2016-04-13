@@ -10,9 +10,11 @@ namespace PatternsPractice
     {
         //public static void Main(string[] args)
         //{
+        //    Invoker i = new Invoker();
         //    Receiver r = new Receiver();
         //    ConcreteCommand c = new ConcreteCommand(new Receiver());
-        //    c.Execute();
+        //    i.SetCommand(c);
+        //    i.ExecuteCommand();
         //    Console.ReadLine();
         //}
     }
@@ -48,6 +50,23 @@ namespace PatternsPractice
         public void Action()
         {
             Console.WriteLine("This is some Action");
+        }
+    }
+
+    class Invoker
+    {
+        Command _command;
+        public void SetCommand(Command command)
+        {
+            _command = command;
+        }
+
+        public void ExecuteCommand()
+        {
+            if (_command != null)
+            {
+                _command.Execute();
+            }
         }
     }
 

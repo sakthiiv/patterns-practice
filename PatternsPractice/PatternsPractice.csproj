@@ -44,6 +44,8 @@
     <Compile Include="Behavioral\ObserverPattern.cs" />
     <Compile Include="Behavioral\StrategyPattern.cs" />
     <Compile Include="Behavioral\TemplatePattern.cs" />
+    <Compile Include="Creational\AbstractFactoryPattern.cs" />
+    <Compile Include="Creational\FactoryPattern.cs" />
     <Compile Include="Structural\AdapterPattern.cs" />
     <Compile Include="Behavioral\CommandPattern.cs" />
     <Compile Include="Structural\CompositePattern.cs" />
@@ -53,9 +55,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Creational\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -30,7 +30,7 @@ namespace PatternsPractice.Structural
         void Activate();       
     }
 
-    class Component : IComponent
+    class ConcreteComponent : IComponent
     {
         private string _name = string.Empty;
         private int _level = 1;
@@ -38,7 +38,7 @@ namespace PatternsPractice.Structural
         public string Name { get { return _name; } set { } }
         public int Level { get { return _level; } set { _level = value; } }
 
-        public Component(string name)
+        public ConcreteComponent(string name)
         {
             _name = name;
         }

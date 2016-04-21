@@ -48,6 +48,7 @@
     <Compile Include="Creational\FactoryPattern.cs" />
     <Compile Include="Structural\AdapterPattern.cs" />
     <Compile Include="Behavioral\CommandPattern.cs" />
+    <Compile Include="Structural\BridgePattern.cs" />
     <Compile Include="Structural\CompositePattern.cs" />
     <Compile Include="Structural\DecoratorPattern.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

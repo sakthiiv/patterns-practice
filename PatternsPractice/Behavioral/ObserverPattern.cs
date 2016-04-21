@@ -8,26 +8,26 @@ namespace PatternsPractice.Behavioral
 {
     class ObserverPattern
     {
-        public static void Main(string[] args)
-        {
-            ConcreteSubject cs = new ConcreteSubject();
+        //public static void Main(string[] args)
+        //{
+        //    ConcreteSubject cs = new ConcreteSubject();
 
-            ConcreteObserverA oa = new ConcreteObserverA(cs);
-            ConcreteObserverB ob = new ConcreteObserverB(cs);            
-            cs.Attach(oa);
-            cs.Attach(ob);
+        //    ConcreteObserverA oa = new ConcreteObserverA(cs);
+        //    ConcreteObserverB ob = new ConcreteObserverB(cs);            
+        //    cs.Attach(oa);
+        //    cs.Attach(ob);
 
-            cs.state = "Completed";
-            cs.Notify();            
+        //    cs.state = "Completed";
+        //    cs.Notify();            
 
-            Console.WriteLine("*** Detaching ConcreteObserverA  ***");
+        //    Console.WriteLine("*** Detaching ConcreteObserverA  ***");
 
-            cs.Detach(oa);
-            cs.state = "Again Started";
-            cs.Notify();
+        //    cs.Detach(oa);
+        //    cs.state = "Again Started";
+        //    cs.Notify();
 
-            Console.ReadKey();
-        }
+        //    Console.ReadKey();
+        //}
     }
 
     abstract class Subject

@@ -6,108 +6,69 @@ using System.Threading.Tasks;
 
 namespace PatternsPractice.Behavioral
 {
-    class ObserverPattern
+    class CommandPattern
     {
         //public static void Main(string[] args)
         //{
-        //    ConcreteSubject cs = new ConcreteSubject();
-
-        //    ConcreteObserverA oa = new ConcreteObserverA(cs);
-        //    ConcreteObserverB ob = new ConcreteObserverB(cs);            
-        //    cs.Attach(oa);
-        //    cs.Attach(ob);
-
-        //    cs.state = "Completed";
-        //    cs.Notify();            
-
-        //    Console.WriteLine("*** Detaching ConcreteObserverA  ***");
-
-        //    cs.Detach(oa);
-        //    cs.state = "Again Started";
-        //    cs.Notify();
-
-        //    Console.ReadKey();
+        //    Invoker i = new Invoker();
+        //    Receiver r = new Receiver();
+        //    ConcreteCommand c = new ConcreteCommand(new Receiver());
+        //    i.SetCommand(c);
+        //    i.ExecuteCommand();
+        //    Console.ReadLine();
         //}
     }
 
-    abstract class Subject
+    abstract class Command
     {
-        List<Observer> _observers = new List<Observer>();
-        public string state = "In Progress ..";
-        public void Attach(Observer observer)
+        protected Receiver _receiver;
+
+        public Command(Receiver receiver)
         {
-            _observers.Add(observer);
+            _receiver = receiver;
         }
 
-        public void Detach(Observer observer)
+        public abstract void Execute();
+    }
+
+    class ConcreteCommand : Command
+    {
+        public ConcreteCommand(Receiver receiver)
+            : base(receiver)
         {
-            _observers.Remove(observer);
+
         }
 
-        public void Notify()
+        public override void Execute()
         {
-            foreach (Observer observer in _observers)
+            _receiver.Action();
+        }
+    }
+
+    class Receiver
+    {
+        public void Action()
+        {
+            Console.WriteLine("This is some Action");
+        }
+    }
+
+    class Invoker
+    {
+        Command _command;
+        public void SetCommand(Command command)
+        {
+            _command = command;
+        }
+
+        public void ExecuteCommand()
+        {
+            if (_command != null)
             {
-                observer.Update();
+                _command.Execute();
             }
         }
     }
 
-    class ConcreteSubject : Subject
-    {
-        public string State
-        {
-            get { return state; }
-            set
-            {
-                state = value;
-                this.Notify();
-            }
-        }
 
-        ////No Need as the base class Notify will be exposed
-        //public new void Notify()
-        //{
-        //    base.Notify();
-        //}
-    }
-
-    abstract class Observer
-    {
-        public Subject subject;
-        public Observer(Subject subject)
-        {
-            this.subject = subject;
-        }
-
-        public abstract void Update();
-    }
-
-    class ConcreteObserverA : Observer
-    {
-        public ConcreteObserverA(Subject subject)
-            : base(subject)
-        {
- 
-        }
-
-        public override void Update()
-        {
-            Console.WriteLine("ConcreteObserverA State: " + subject.state);
-        }
-    }
-
-    class ConcreteObserverB : Observer
-    {
-        public ConcreteObserverB(Subject subject)
-            : base(subject)
-        {
- 
-        }
-
-        public override void Update()
-        {
-            Console.WriteLine("ConcreteObserverA State: " + subject.state);
-        }
-    }
 }

@@ -8,19 +8,19 @@ namespace PatternsPractice.Structural
 {
     class DecoratorPattern
     {
-        static void Main(string[] args)
-        {
-            Component C = new ComponentA();
-            Decorator D = new ConcreteDecoratorA();
-            Decorator D2 = new ConcreteDecoratorB();
+        //public static void Main(string[] args)
+        //{
+        //    Component C = new ComponentA();
+        //    Decorator D = new ConcreteDecoratorA();
+        //    Decorator D2 = new ConcreteDecoratorB();
 
-            D.SetComponent(C);
-            //By Mistake, used D for the below statement and It didn't work :D
-            D2.SetComponent(D);
+        //    D.SetComponent(C);
+        //    //By Mistake, used D for the below statement and It didn't work :D
+        //    D2.SetComponent(D);
 
-            D2.Operation();
-            Console.ReadLine();
-        }
+        //    D2.Operation();
+        //    Console.ReadLine();
+        //}
     }
 
     abstract class Component
@@ -74,6 +74,5 @@ namespace PatternsPractice.Structural
             Console.WriteLine("From Decorator B with Component");
         }
     }
-
 
 }

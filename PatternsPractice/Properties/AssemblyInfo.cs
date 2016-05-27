@@ -1,16 +1,16 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PatternsTest")]
+[assembly: AssemblyTitle("PatternsPractice")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CTS")]
-[assembly: AssemblyProduct("PatternsTest")]
-[assembly: AssemblyCopyright("Copyright © CTS 2016")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("PatternsPractice")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

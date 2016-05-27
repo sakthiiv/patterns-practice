@@ -1,23 +1,23 @@
-using System;
-using RealWorld.IPL.Common;
-using RealWorld.IPL.Models;
-using System.Collections.Generic;
-
 namespace RealWorld.IPL.MatchScheduler
 {
+    using System;
+    using RealWorld.IPL.Common;
+    using RealWorld.IPL.Models;
+    using System.Collections.Generic;
+
     class NormalScheduler : SchedulerBase
     {
-        IMatchGenerator match = new DefaultMatchGenerator();
-        ITeamGenerator team = new DefaultTeamGenerator();        
+        IMatchGenerator matchGenerator = new DefaultMatchGenerator();
+        ITeamGenerator teamGenerator = new DefaultTeamGenerator();        
 
         public NormalScheduler()
         {
-            this.Generate(match, team);
+            this.Generate(matchGenerator, teamGenerator);
         }
 
         public override void Generate(IMatchGenerator match, ITeamGenerator team)
         {
-            base.Matches = match.Generate(team);
+            base.Matches = match.GenerateMatch(team);
         }
 
         public override void Display()

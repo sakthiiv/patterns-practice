@@ -1,9 +1,9 @@
-using RealWorld.IPL.Common;
-using RealWorld.IPL.Models;
-using System.Collections.Generic;
-
 namespace RealWorld.IPL.MatchScheduler
 {
+    using RealWorld.IPL.Common;
+    using RealWorld.IPL.Models;
+    using System.Collections.Generic;
+
     // Template Pattern
     abstract class SchedulerBase : IScheduler
     {

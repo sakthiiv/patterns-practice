@@ -1,12 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace RealWorld.IPL.Models
 {
-    class Match
+    using System;
+
+    public class Match
     {
         private Team _teamA;
         private Team _teamB;

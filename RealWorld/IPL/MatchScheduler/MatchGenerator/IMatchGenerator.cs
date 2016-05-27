@@ -1,10 +1,10 @@
-using RealWorld.IPL.Models;
-using System.Collections.Generic;
-
 namespace RealWorld.IPL.MatchScheduler
 {
-    interface IMatchGenerator
+    using RealWorld.IPL.Models;
+    using System.Collections.Generic;
+
+    public interface IMatchGenerator
     {
-        List<Match> Generate(ITeamGenerator team);
+       List<Match> GenerateMatch(ITeamGenerator team);
     }
 }

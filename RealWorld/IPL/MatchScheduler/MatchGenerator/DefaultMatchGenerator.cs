@@ -1,18 +1,24 @@
-using System.Collections.Generic;
-using RealWorld.IPL.Models;
-using System;
 namespace RealWorld.IPL.MatchScheduler
 {
-    class DefaultMatchGenerator : IMatchGenerator
+    using System;
+    using System.Collections.Generic;
+    using RealWorld.IPL.Models;    
+
+    public class DefaultMatchGenerator : IMatchGenerator
     {
         public DefaultMatchGenerator()
         {
             
         }
 
-        public List<Match> Generate(ITeamGenerator team)
+        public List<Match> GenerateMatch(ITeamGenerator teamGenerator)
         {
-            List<Team> teams = team.Generate();
+            if (teamGenerator == null)
+            {
+                throw new ArgumentNullException("teamGenerator");
+            }
+
+            List<Team> teams = teamGenerator.Generate();
             List<Match> matches = new List<Match>();
 
             AlternateMatchGenerator(teams, matches);
@@ -23,6 +29,10 @@ namespace RealWorld.IPL.MatchScheduler
 
         private void AlternateMatchGenerator(List<Team> teams, List<Match> matches, bool isPlayed = false)
         {
+            if (teams == null) {
+                throw new ArgumentNullException("teams");
+            }
+
             int i = 0, j = teams.Count - 1, k = teams.Count - 1, l = 0, m = 0, n = teams.Count - 1;
 
             while (k > i)
@@ -39,7 +49,7 @@ namespace RealWorld.IPL.MatchScheduler
                     matches.Add(this.CreateMatch(teams[l], teams[j], isPlayed));
                     l++; j--;
                 }
-                k--; i = 0; ;
+                k--; i = 0;
                 if (k < i)
                 {
                     i++; k = teams.Count - 1;

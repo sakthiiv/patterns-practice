@@ -1,9 +1,9 @@
-using System.Collections.Generic;
-using RealWorld.IPL.Models;
-
 namespace RealWorld.IPL.MatchScheduler
 {
-    class DefaultTeamGenerator : ITeamGenerator
+    using System.Collections.Generic;
+    using RealWorld.IPL.Models;
+
+    public class DefaultTeamGenerator : ITeamGenerator
     {
         public DefaultTeamGenerator()
         {

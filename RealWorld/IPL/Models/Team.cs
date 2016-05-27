@@ -1,12 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace RealWorld.IPL.Models
 {
-    class Team
+    using System.Collections.Generic;
+
+    public class Team
     {
         private string _name;
         private Venue _home;

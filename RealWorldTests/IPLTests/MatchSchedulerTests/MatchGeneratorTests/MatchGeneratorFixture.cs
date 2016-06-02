@@ -6,6 +6,7 @@ namespace RealWorldTests.IPLTests.MatchSchedulerTests
     using FakeItEasy;
     using RealWorld.IPL.MatchScheduler;
     using RealWorld.IPL.Models;
+    using RealWorld.IPL;
 
     public class MatchGeneratorFixture
     {

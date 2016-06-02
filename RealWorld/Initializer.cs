@@ -1,18 +1,16 @@
-using System;
-using RealWorld.IPL.MatchScheduler;
-
 namespace RealWorld
 {
+    using System;
+    using RealWorld.IPL.MatchScheduler;
+    using RealWorld.Bootstrapper;
+
     class Initializer
     {
         static void Main(string[] args)
         {
-            SchedulerBase schedule = new NormalScheduler();
-            schedule.Display();
-            //schedule.Matches.ForEach((m) =>
-            //{
-            //    Console.WriteLine(m.TeamA.Name + " vs " + m.TeamB.Name + " ---------- " + m.Venue.Name);
-            //});
+            var bootstrapper = RealWorldBootstrapperLocator.Bootstrapper;
+            bootstrapper.Initialise();
+            bootstrapper.Run();
             Console.ReadKey();
         }
     }

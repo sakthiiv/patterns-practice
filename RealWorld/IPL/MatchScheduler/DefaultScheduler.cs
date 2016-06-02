@@ -5,12 +5,12 @@ namespace RealWorld.IPL.MatchScheduler
     using RealWorld.IPL.Models;
     using System.Collections.Generic;
 
-    class NormalScheduler : SchedulerBase
+    class DefaultScheduler : SchedulerBase
     {
         IMatchGenerator matchGenerator = new DefaultMatchGenerator();
         ITeamGenerator teamGenerator = new DefaultTeamGenerator();        
 
-        public NormalScheduler()
+        public DefaultScheduler()
         {
             this.Generate(matchGenerator, teamGenerator);
         }

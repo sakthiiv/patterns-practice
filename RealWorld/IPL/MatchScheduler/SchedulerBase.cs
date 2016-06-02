@@ -5,7 +5,7 @@ namespace RealWorld.IPL.MatchScheduler
     using System.Collections.Generic;
 
     // Template Pattern
-    abstract class SchedulerBase : IScheduler
+    public abstract class SchedulerBase : IScheduler
     {
         private List<Match> _matches;
 
